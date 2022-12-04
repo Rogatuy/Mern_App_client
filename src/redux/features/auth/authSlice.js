@@ -13,7 +13,7 @@ export const registerUser = createAsyncThunk(
   'auth/registerUser',
   async ({name, email, password}) => { 
     try{
-      const {data} = await axios.post('https://mernappserver-production.up.railway.app/api/auth/register', {
+      const {data} = await axios.post('/auth/register', {
         name,
         email,
         password,
@@ -35,7 +35,7 @@ export const loginUser = createAsyncThunk(
   'auth/loginUser',
   async ({email, password}) => { 
     try{
-      const {data} = await axios.post('https://mernappserver-production.up.railway.app/api/auth/login', {
+      const {data} = await axios.post('/auth/login', {
         email,
         password,
       });
@@ -56,7 +56,7 @@ export const getMe = createAsyncThunk(
   'auth/getMe',
   async () => { 
     try{
-      const {data} = await axios.get('https://mernappserver-production.up.railway.app/api/auth/me');
+      const {data} = await axios.get('/auth/me');
 
       if(data.token) {
         window.localStorage.setItem('token', data.token);
