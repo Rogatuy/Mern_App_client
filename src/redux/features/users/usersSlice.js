@@ -9,7 +9,7 @@ const initialState = {
 export const getAllUsers = createAsyncThunk(
   'users/getAllUsers', async () => {
   try {
-    const {data} = await axios.get('mernappserver-production.up.railway.app/api/users');
+    const {data} = await axios.get('https://mernappserver-production.up.railway.app/api/users');
     return data;
   } catch (error) {
     console.log(error);
@@ -20,7 +20,7 @@ export const removeUser = createAsyncThunk(
   'users/delete',
   async (_id) => { 
     try{
-      const {data} = await axios.delete('mernappserver-production.up.railway.app/api/users/delete', {
+      const {data} = await axios.delete('https://mernappserver-production.up.railway.app/api/users/delete', {
         data:{_id}
       });
 
@@ -34,7 +34,7 @@ export const blockedUser = createAsyncThunk(
   'users/blocked',
   async ({_id}) => { 
     try{
-      const {data} = await axios.post('mernappserver-production.up.railway.app/api/users/blocked', {
+      const {data} = await axios.post('https://mernappserver-production.up.railway.app/api/users/blocked', {
         _id,
       });
 
@@ -48,7 +48,7 @@ export const unblockedUser = createAsyncThunk(
   'users/unblocked',
   async ({_id}) => { 
     try{
-      const {data} = await axios.post('mernappserver-production.up.railway.app/api/users/unblocked', {
+      const {data} = await axios.post('https://mernappserver-production.up.railway.app/api/users/unblocked', {
         _id,
       });
 
