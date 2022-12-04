@@ -87,8 +87,8 @@ export const authSlice = createSlice({
       state.status = null;
     },
     [registerUser.fulfilled]: (state, action) => {
-      state._id = action.payload?.newUser._id;
-      state.email = action.payload?.newUser.email;
+      state._id = action.payload.newUser?._id;
+      state.email = action.payload.newUser?.email;
       state.token = action.payload?.token;
       state.isLoading = false;
       state.status = action.payload.message;    
@@ -103,8 +103,8 @@ export const authSlice = createSlice({
       state.status = null;
     },
     [loginUser.fulfilled]: (state, action) => {
-      state._id = action.payload?.user._id;
-      state.email = action.payload?.user.email;
+      state._id = action.payload.user?._id;
+      state.email = action.payload.user?.email;
       state.token = action.payload?.token;
       state.isLoading = false;
       state.status = action.payload.message;  
