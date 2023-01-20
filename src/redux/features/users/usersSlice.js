@@ -34,7 +34,7 @@ export const blockedUser = createAsyncThunk(
   'users/blocked',
   async ({_id}) => { 
     try{
-      const {data} = await axios.post('users/blocked', {
+      const {data} = await axios.post('/users/blocked', {
         _id,
       });
 
@@ -69,7 +69,7 @@ export const usersSlice = createSlice({
     },
     [getAllUsers.fulfilled]: (state, action) => {
       state.isLoading = false
-      state.users = action.payload?.allUsers;
+      state.users = action.payload.allUsers;
     },
     [getAllUsers.rejected]: (state, action) => {
       state.isLoading = false
@@ -80,7 +80,7 @@ export const usersSlice = createSlice({
     },
     [removeUser.fulfilled]: (state, action) => {
       state.isLoading = false
-      state.users = action.payload?.allUsers;
+      state.users = action.payload.allUsers;
     },
     [removeUser.rejected]: (state) => {
       state.isLoading = false
@@ -91,7 +91,7 @@ export const usersSlice = createSlice({
     },
     [blockedUser.fulfilled]: (state, action) => {
       state.isLoading = false
-      state.users = action.payload?.allUsers;
+      state.users = action.payload.allUsers;
     },
     [blockedUser.rejected]: (state) => {
       state.isLoading = false
@@ -102,7 +102,7 @@ export const usersSlice = createSlice({
     },
     [unblockedUser.fulfilled]: (state, action) => {
       state.isLoading = false
-      state.users = action.payload?.allUsers;
+      state.users = action.payload.allUsers;
     },
     [unblockedUser.rejected]: (state) => {
       state.isLoading = false
