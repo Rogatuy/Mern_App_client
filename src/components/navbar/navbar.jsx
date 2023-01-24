@@ -21,7 +21,7 @@ const Navbar = () => {
 
     <nav>
       <div className="nav-wrapper navbar blue">
-        <p className="brand-logo">HOMEWORK</p>
+        <p className="brand-logo">COURSEWORK</p>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           {isAuth 
           ? <li><Link to="/login" onClick={logoutHandler}>Exit User</Link></li>
